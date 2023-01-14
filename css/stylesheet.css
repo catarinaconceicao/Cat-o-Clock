@@ -176,3 +176,13 @@ footer p {
       "footer footer footer";
   }
 }
+.start {
+  width: 4px;
+  height: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.267);
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  position: relative;
+  top: -26rem;
+  left: 9.8rem;
+}
