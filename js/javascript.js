@@ -17,8 +17,6 @@ const ssPointerPt = document.querySelector(".ss-pointer-pt");
 const ssPointerJp = document.querySelector(".ss-pointer-jp");
 const ssPointerHi = document.querySelector(".ss-pointer-hi");
 
-const btnCheckTime = document.querySelector(".btn");
-
 const displayTime = function (zone, lang) {
   const options = {
     hour: "numeric",
@@ -44,8 +42,6 @@ digitalClocks();
 setInterval(digitalClocks, 1000);
 
 //-----------------> Analogic clocks pointers
-
-//associar angulos dos ponteiros as horas
 
 const pointerMovement = function () {
   const displayTimePt = displayTime("Portugal", "pt-PT").split(":");

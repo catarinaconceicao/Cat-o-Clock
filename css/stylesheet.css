@@ -1,40 +1,60 @@
-header {
-  height: 3em;
+/* ------------Grid------------ */
+@media screen and (max-width: 480px) {
+  .container {
+    display: grid;
+    height: 100vh;
+    width: 95vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "header"
+      "HI"
+      "PT"
+      "JP"
+      "footer";
+    overflow-x: hidden;
+  }
 }
 
 body {
-  overflow-x: hidden;
-  background-image: linear-gradient(
+  background-image: repeating-linear-gradient(
     to bottom right,
     rgba(254, 186, 175, 1),
     rgba(255, 255, 255, 1),
     rgba(230, 254, 200, 1),
     rgba(254, 186, 175, 1)
   );
-  font-family: "Malgun Gothic", sans-serif;
-  width: 100vw;
-  height: 100vw;
+  font-family: "Open Sans";
 }
 
-.clock {
-  width: 100vw;
+header {
+  grid-area: header;
 }
 
 h1 {
   margin: 1rem;
 }
 
-button {
-  font-size: 0.9rem;
-  width: 7rem;
-  height: 3.5rem;
-  background-color: rgb(255, 255, 255);
-  border-radius: 2rem;
-  border: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  margin-right: 10rem;
-  right: 2rem;
+.HI {
+  grid-area: HI;
+}
+
+.PT {
+  grid-area: PT;
+}
+
+.JP {
+  grid-area: JP;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* ------------Main styling------------ */
+
+header {
+  height: 3em;
 }
 
 header,
@@ -125,25 +145,34 @@ footer {
   border-radius: 50%;
   background-color: black;
 }
-
-/* ------------FLEXBOX------------ */
-.clock,
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-  align-content: center;
-  flex-wrap: wrap;
+footer p {
+  border-top: 1px solid rgba(75, 75, 75, 0.808);
+  font-size: 0.75rem;
+  color: rgba(75, 75, 75, 0.808);
 }
-
-h1 {
-  flex: 0.7;
+.analogic {
+  margin-bottom: 5rem;
 }
-
-.user-clock {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  align-content: flex-end;
+@media screen and (min-width: 481px) {
+  body {
+    display: grid;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Malgun Gothic", sans-serif;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 2fr 0.2fr;
+    background-attachment: fixed;
+    background-image: repeating-linear-gradient(
+      to bottom right,
+      rgba(254, 186, 175, 1),
+      rgba(255, 255, 255, 1),
+      rgba(230, 254, 200, 1),
+      rgba(254, 186, 175, 1)
+    );
+    grid-template-areas:
+      "header header header"
+      "HI PT JP"
+      "footer footer footer";
+  }
 }
